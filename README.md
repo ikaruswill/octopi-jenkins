@@ -1,2 +1,2 @@
-# octopi-jenkins
+# pi-jenkins
 Docker image for jenkins on a armv7 Raspberry Pi
