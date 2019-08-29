@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine3.9
+FROM ikaruswill/pi-java:1.0
 
 ARG user=jenkins
 ARG group=jenkins
@@ -8,8 +8,7 @@ ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_HTTP_PORT 8080
 ENV JENKINS_SLAVE_AGENT_PORT 50000
 
-# ttf-dejavu for JVM issue: https://wiki.jenkins.io/display/JENKINS/Jenkins+got+java.awt.headless+problem
-RUN apk add --no-cache git openssh-client curl unzip bash ttf-dejavu coreutils tini
+RUN apk add --no-cache git openssh-client curl unzip bash coreutils tini
 
 RUN mkdir -p $JENKINS_HOME && \
     chown ${uid}:${gid} $JENKINS_HOME && \
